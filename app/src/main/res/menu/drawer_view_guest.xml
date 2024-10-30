@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/group_feature">
+        <item
+            android:id="@+id/option_login"
+            android:checkable="true"
+            android:title="Inicia Sesión / Crear cuenta" />
+    </group>
+
+    <group android:id="@+id/group_projects">
+        <item
+            android:id="@+id/option_services"
+            android:checkable="true"
+            android:title="Servicios" />
+
+        <item
+            android:id="@+id/option_certificates"
+            android:checkable="true"
+            android:title="Certificados de Regalo" />
+        <item
+            android:id="@+id/option_faqs"
+            android:checkable="true"
+            android:title="Preguntas Frecuentes" />
+        <item
+            android:id="@+id/option_contact"
+            android:checkable="true"
+            android:title="Contacto" />
+
+    </group>
+</menu>
