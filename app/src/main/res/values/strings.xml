@@ -3,65 +3,26 @@
     <string name="open_drawer_content_desc_res">Menu Abierto</string>
     <string name="close_drawer_content_desc_res">Menu Abierto</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_login">LoginActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-
-    <string name="login">LOGIN</string>
-    <string name="email">Correo</string>
+    <string name="login">GRUPO CAROLO</string>
+    <string name="btn_login">Entrar</string>
+    <string name="email">E-mail o número de celular</string>
     <string name="password">Contraseña</string>
     <string name="user_type">Tipo de usuario</string>
-    <string name="recover_password">Recuperar Contraseña</string>
+    <string name="recover_password">¿Olvidaste tu  contraseña?</string>
+    <string name="recover_description_password">Ingresa tu número celular y te ennviaremos instrucciones sobre como restablecerla</string>
+    <string name="recovery_celular">Número de celular</string>
     <string name="recover_send">Enviar</string>
     <string name="not_account">¿No tienes cuenta?</string>
-    <string name="create_account">CREA TU CUENTA</string>
-
-    <string name="title_gift_resume">Regala una experiencia única a quien desees, ingresa sus datos y nosotros haremos el resto.</string>
-    <string name="title_gift_select_gift_type">Selecciona el tipo de regalo.</string>
-    <string name="gift_select_gift_type">Tipo de regalo:</string>
-    <string name="title_gift_select_gift_duration">Selecciona la duración del regalo.</string>
-
-    <string name="title_gift_select_gift_data_information_from">De:</string>
-    <string name="title_gift_select_gift_data_information_from_hint">Nombre de quien lo envía</string>
-
-    <string name="title_gift_select_gift_data_information_to">Para:</string>
-    <string name="title_gift_select_gift_data_information_to_hint">Nombre de quien lo recibe</string>
-
-    <string name="title_gift_select_gift_data_information_message">Mensaje (Opcional):</string>
-    <string name="gift_select_gift_data_information_message">Mensaje:</string>
-    <string name="title_gift_select_gift_data_information_message_hint">¡Feliz Cumpleaños!</string>
-
-    <string name="gift_continue">CONTINUAR</string>
-    <string name="gift_finish">FINALIZAR</string>
-
-    <string name="gift_resume">Resumen:</string>
-    <string name="gift_resume_total">Total:</string>
-    <string name="gift_email_title">Destinatario:</string>
-    <string name="gift_email_hint">Correo electrònico del destinatario:</string>
-
-    <string name="gift_resume_payment">Forma de pago:</string>
-    <string name="gift_resume_payment_mp">MercadoPago</string>
-
-    <string name="reserve_title_type">Tipo de reserva:</string>
-    <string name="reserve_title_duration">Duración:</string>
-    <string name="reserve_title_gender">Género de terapeuta:</string>
-
-    <string name="service_searcher">Búsca tu servicio</string>
-    <string name="service_duration">Duración:</string>
-    <string name="service_couple">En Pareja:</string>
-    <string name="service_at_home">A Domicilio:</string>
-    <string name="service_reserve">RESERVAR</string>
-    <string name="service_detail">DETALLE</string>
-    <string name="service_detail_rate">CALIFICAR</string>
-    <string name="service_gift">REGALAR</string>
+    <string name="create_account">Crear una cuenta</string>
+    <string name="btn_create_account">Registrar</string>
 
     <string name="alert_positive_text_default">Aceptar</string>
     <string name="alert_negative_text_default">Cancelar</string>
 
     <string name="alert_message_logout">¿Deseas cerrar sesión?</string>
-
 
     <string name="title_create_account_type">Tipo de cuenta</string>
     <string name="title_create_personal_data_type">Datos personales</string>
@@ -69,22 +30,32 @@
     <string name="title_create_security">Seguridad</string>
     <string name="title_create_notes_type">Notas</string>
 
-    <string name="hint_create_personal_data_name">Nombre</string>
-    <string name="hint_create_personal_data_age">Edad</string>
-    <string name="hint_create_personal_data_gender">Género</string>
-
-    <string name="hint_create_more_information_location">Ubicación</string>
-    <string name="hint_create_more_information_email">Correo electrónico</string>
-    <string name="hint_create_more_information_phone_number">Teléfono celular</string>
-    <string name="hint_create_security_password">Contraseña</string>
-    <string name="hint_create_security_password_confirm">Confirmar contraseña</string>
-
-    <string name="hint_create_notes">El horario de atención es de 11:00 hrs a 18:00 hrs.</string>
+    <string name="hint_create_name">Nombre completo</string>
+    <string name="hint_create_mail">E-mail</string>
+    <string name="hint_create_code_phone">Código</string>
+    <string name="hint_create_phone_number">Número de celular</string>
+    <string name="hint_create_day">Día</string>
+    <string name="hint_create_month">Mes</string>
+    <string name="hint_create_year">Año</string>
+    <string name="hint_create_birthday">*Proporciona este dato y obtén un beneficio en tu cumpleaños</string>
+    <string name="hint_create_sex">Sexo</string>
+    <string name="hint_create_password">Contraseña</string>
+    <string name="hint_create_confirm_password">Confirmar contraseña</string>
+    <string name="hint_create_terms_conditions">He leído y acepto los Términos y Condiciones, así como el Aviso de Privacidad</string>
 
     <string name="my_service_date">Fecha: %1s\n\n</string>
     <string name="my_service_couple">Tipo: %1s\n\n</string>
     <string name="my_service_gender">Género de teraèuta: %1s</string>
     <string name="my_service_to_take">PRÓXIMOS</string>
     <string name="my_service_take_it">COMPLETADOS</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
 </resources>
