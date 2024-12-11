@@ -12,9 +12,22 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="black_overlay_2">#33000000</color>
     <color name="warning_color">#EDB95E</color>
     <color name="danger_color">#E23636</color>
     <color name="fine_color">#82DD55</color>
     <color name="principal_app">#11BFFF</color>
 
+
+    <color name= "boton_color">#77CDDE</color>
+    <color name="white_transparent">#33FFFFFF</color>
+    <color name="white_transparent2">#99FFFFFF</color>
+    <color name="black_transparent">#99000000</color>
+    <color name="header_morado">#f7f7fe</color>
+    <color name="letra_gris">#76777a</color>
+    <color name="letra_roja">#6c1000</color>
+    <color name="letra_azul">#3c6eb0</color>
+    <color name="gris_header">#f5f5f5</color>
+    <color name="cafe_boton">#c09d72</color>
+    <color name="cafe_boton2">#ccb08f</color>
 </resources>

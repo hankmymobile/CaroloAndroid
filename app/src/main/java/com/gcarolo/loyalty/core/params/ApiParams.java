@@ -37,6 +37,10 @@ public abstract class ApiParams {
         appendParameter(paramKey, (null == paramValue) ? null : paramValue.toString());
     }
 
+    protected void appendParameter(String paramKey, Double paramValue) {
+        appendParameter(paramKey, (null == paramValue) ? null : paramValue.toString());
+    }
+
     protected void appendParameter(String paramKey, Boolean paramValue) {
         appendParameter(paramKey, (null == paramValue) ? null : paramValue.toString());
     }

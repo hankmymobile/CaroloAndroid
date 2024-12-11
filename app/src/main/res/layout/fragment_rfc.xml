@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_img2"
+    android:clickable="true"
+    tools:context=".modules.recentActivities.RecentActivitiesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_recovery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_transparent"
+            android:fontFamily="sans-serif"
+            android:paddingVertical="5dp"
+            android:text="@string/rfc_title"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+
+            android:textSize="@dimen/text_size_25" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_shadow_end_color"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/default_vertical_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                android:background="@color/black_transparent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="220dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_default_rfc" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+                    android:layout_marginVertical="@dimen/default_vertical_margin"
+                    android:text="@string/no_rfc"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_25" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/default_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/opt_new_rfc"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_button_default"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/wide_vertical_margin"
+                    android:gravity="center"
+                    android:text="Registrar nuevo"
+                    android:textColor="@color/white" />
+
+
+                <Button
+                    android:id="@+id/btn_canjear"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_button_default"
+                    android:backgroundTint="@color/boton_color"
+                    android:text="@string/next"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

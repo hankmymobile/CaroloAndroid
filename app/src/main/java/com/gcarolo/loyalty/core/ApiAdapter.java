@@ -10,6 +10,7 @@ import com.gcarolo.loyalty.core.dto.ApiError;
 import com.google.gson.Gson;
 
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,7 +21,7 @@ public class ApiAdapter {
     public Retrofit retrofit;
 
     private static final String TAG = "ApiAdapter";
-    public static final String BASE_URL = "http://70.35.195.239/mymobile/Bliss/";
+    public static final String BASE_URL = "https://carolo-loyalty-gvhtajdbc3ayhkcq.mexicocentral-01.azurewebsites.net/";
     public static final String RESPONSE_999 = "999"; //No internet
 
     public static final int RESPONSE_200 = 200; //Success
@@ -33,7 +34,10 @@ public class ApiAdapter {
 
         if (null == retrofit) {
 
-            OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+            OkHttpClient.Builder httpClient = new OkHttpClient.Builder().addInterceptor(logging);
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)

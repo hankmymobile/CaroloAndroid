@@ -1,27 +1,24 @@
-package com.gcarolo.loyalty.modules.recoveryPassword;
+package com.gcarolo.loyalty.modules.address;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.gcarolo.loyalty.R;
 import com.gcarolo.loyalty.common.BaseFragment;
-import com.gcarolo.loyalty.common.alert.DefaultDialogAlert;
-import com.gcarolo.loyalty.modules.welcomePage.WelcomePageFragment;
+import com.gcarolo.loyalty.modules.recoveryPassword.ChangePasswordFragment;
 
-public class RecoveryPasswordFragment extends BaseFragment {
+public class AddAddressFragment extends BaseFragment {
 
     private View rootView;
-    public RecoveryPasswordFragment() {
+    public AddAddressFragment() {
         // Required empty public constructor
     }
 
-    public static RecoveryPasswordFragment newInstance() {
-        RecoveryPasswordFragment fragment = new RecoveryPasswordFragment();
+    public static AddAddressFragment newInstance() {
+        AddAddressFragment fragment = new AddAddressFragment();
         return fragment;
     }
 
@@ -35,21 +32,13 @@ public class RecoveryPasswordFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         if (null == this.rootView) {
-            this.rootView = inflater.inflate(R.layout.fragment_recovery_password, container, false);
+            this.rootView = inflater.inflate(R.layout.fragment_add_address, container, false);
             configViews();
         }
         return rootView;
     }
 
     private void configViews() {
-        Button btnChangePassword = this.rootView.findViewById(R.id.btn_send_password);
-        btnChangePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ChangePasswordFragment fragment = ChangePasswordFragment.newInstance();
-                displayFragment(fragment, null);
-            }
-        });
 
     }
 }

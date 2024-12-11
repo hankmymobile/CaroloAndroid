@@ -1,9 +1,19 @@
 package com.gcarolo.loyalty.modules.createAccount;
 
+import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
+
+import com.gcarolo.loyalty.R;
 import com.gcarolo.loyalty.common.BasePresenter;
+import com.gcarolo.loyalty.core.ApiClient;
 import com.gcarolo.loyalty.core.RequestCodeEnum;
 import com.gcarolo.loyalty.core.dto.ApiDto;
 import com.gcarolo.loyalty.core.dto.ApiError;
+import com.gcarolo.loyalty.core.dto.login.LoginDTO;
+import com.gcarolo.loyalty.core.params.createAccount.CreateAccountParams;
+import com.gcarolo.loyalty.core.params.createAccount.Gender;
+import com.gcarolo.loyalty.core.params.login.UserLoginParams;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class CreateAccountPresenter extends BasePresenter<CreateAccountView> {
 
@@ -11,31 +21,38 @@ public class CreateAccountPresenter extends BasePresenter<CreateAccountView> {
         super(view);
     }
 
-    String profileId = "";
-    String gender = "";
-
-    public void getProfiles() {
+    public void registerUser(String name, String mail, String code, String phoneNumber, String birthday, Gender gender, String password) {
         getView().showProgressDialog();
+
+        CreateAccountParams params = new CreateAccountParams();
+        params.setUsername(mail);
+        params.setNombreCompleto(name);
+        params.setPassword(password);
+        params.setAutoriza(true);
+        params.setNumeroCelular(phoneNumber);
+        params.setFechaNacimiento(birthday);
+        params.setSexoUsuario(gender);
+
+        ApiClient.getInstance().registerUser(params, this);
     }
 
-    public void setProfileId(String profileId) {
-        this.profileId = profileId;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void registerUser(String name, String age, String email, String phoneNumber, String password, String notes) {
-
+    public void loginUser(String username, String password) {
+        UserLoginParams params = new UserLoginParams();
+        params.setUsername(username);
+        params.setPassword(password);
+        ApiClient.getInstance().loginUser(params, this);
     }
 
     @Override
     public void onSuccessResponse(RequestCodeEnum requestCode, ApiDto dto) {
         super.onSuccessResponse(requestCode, dto);
         switch (requestCode) {
-            case GET_PROFILES:
-                //this.validateDataProfiles((ProfilesDto) dto);
+            case USER_REGISTER:
+                getView().successRegister();
+                break;
+            case USER_LOGIN:
+                getView().hideProgressDialog();
+                getView().successLogin(((LoginDTO)dto).getData().getToken(), ((LoginDTO)dto).getData().getUserId(), ((LoginDTO)dto).getData().getFullName());
                 break;
         }
     }
@@ -43,9 +60,13 @@ public class CreateAccountPresenter extends BasePresenter<CreateAccountView> {
     @Override
     public void onErrorResponse(RequestCodeEnum requestCode, ApiError errorDto) {
         super.onErrorResponse(requestCode, errorDto);
+        getView().hideProgressDialog();
         switch (requestCode) {
-            case GET_PROFILES:
-                //this.validateDataProfiles(null);
+            case USER_REGISTER:
+                view.showErrorAlert(errorDto.getMensaje());
+                break;
+            case USER_LOGIN:
+                getView().showErrorAlert(errorDto.getMensaje());
                 break;
         }
     }

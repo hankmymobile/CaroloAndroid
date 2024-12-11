@@ -5,5 +5,6 @@ public enum RequestCodeEnum {
     GET_PROFILES,
     USER_LOGIN,
     USER_INFO,
-    GET_ADDRESSES
+    GET_ADDRESSES,
+    USER_BALANCE
 }

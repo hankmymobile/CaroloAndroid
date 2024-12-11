@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/max_vertical_margin"
+    app:cornerRadius="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo actual"
+        android:textColor="@color/letra_gris"
+        android:textSize="@dimen/text_size_12" />
+
+    <TextView
+        android:id="@+id/txt_saldo_actual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0.00"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_25"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresa cantidad a redimir"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_12" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_saldo_redimir"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
+        app:boxBackgroundColor="@color/white_transparent"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_saldo_redimir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minLines="1"
+            android:paddingVertical="1dp"
+            android:text="$0.00"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_22"
+            app:cornerRadius="8dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/min_vertical_margin"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_atras"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/height_button_default"
+            android:background="@null"
+            android:text="Atrás"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp" />
+
+        <Button
+            android:id="@+id/btn_canjear"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/height_button_default"
+            android:backgroundTint="@color/boton_color"
+            android:text="Canjear"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

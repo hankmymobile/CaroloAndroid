@@ -4,73 +4,140 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/bg_img2"
     android:clickable="true"
-    tools:context=".modules.recoveryPassword.RecoveryPasswordFragment">
+    tools:context=".modules.recentActivities.RecentActivitiesFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/font_gray"
-        android:orientation="vertical"
-        android:paddingHorizontal="@dimen/default_horizontal_margin"
-        android:paddingVertical="@dimen/default_vertical_margin">
-
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/title_recovery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/max_vertical_margin"
-            android:text="@string/recover_password"
+            android:background="@color/black_transparent"
+            android:fontFamily="sans-serif"
+            android:paddingVertical="5dp"
+            android:text="@string/recent_activities_title"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_19"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txt_recovery_description"
+            android:textSize="@dimen/text_size_25" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-            android:layout_marginVertical="@dimen/max_vertical_margin"
-            android:text="@string/recover_description_password"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_19"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_recovery" />
+            android:layout_height="match_parent"
+            android:background="@color/cardview_shadow_end_color"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/default_vertical_margin">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-            android:layout_marginVertical="@dimen/wide_vertical_margin"
-            android:background="@color/white"
-            app:cornerRadius="6dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_login_account_password"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/recovery_celular"
-                android:inputType="text|textPassword"
-                app:cornerRadius="6dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:background="@color/black_transparent"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_send_password"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_button_default"
-            android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-            android:layout_marginVertical="@dimen/wide_vertical_margin"
-            android:backgroundTint="@color/light_blue_600"
-            android:text="@string/recover_send"
-            app:cornerRadius="6dp" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+                    android:layout_marginVertical="@dimen/max_vertical_margin"
+                    android:background="@color/white_transparent"
+                    android:src="@drawable/img_edit_perfil_default" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:id="@+id/lbl_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/default_vertical_margin"
+                        android:text="@string/message_start"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_30"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/lbl_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/default_vertical_margin"
+                        android:text="@string/default_ammount"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_30"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                android:background="@color/black_transparent">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ln_nodata"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+                        android:layout_marginVertical="@dimen/default_vertical_margin"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/recent_activities_subtitle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_22" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="220dp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_default_rfc" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+                        android:layout_marginVertical="@dimen/default_vertical_margin"
+                        android:text="@string/recent_activities_no_activities"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_25" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_my_services"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:listitem="@layout/activities_holder" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
-
 </FrameLayout>

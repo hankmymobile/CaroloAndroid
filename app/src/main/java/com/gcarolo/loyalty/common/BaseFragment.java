@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 public class BaseFragment extends Fragment implements IView {
 
+    public static String URL = "url";
     private String tagName = getClass().getCanonicalName();
     private OnFragmenInteractionListener fragmentListener;
 
@@ -74,6 +75,13 @@ public class BaseFragment extends Fragment implements IView {
         if (getActivity() instanceof BaseActivity) {
             BaseActivity activity = ((BaseActivity) getActivity());
             activity.displayFragment(nextFragment, bundle, nextFragment.getTagName(), true);
+        }
+    }
+
+    public void replaceFragment(BaseFragment nextFragment) {
+        if (getActivity() instanceof BaseActivity) {
+            BaseActivity activity = ((BaseActivity) getActivity());
+            activity.replaceFragment(nextFragment, nextFragment.getTagName());
         }
     }
 

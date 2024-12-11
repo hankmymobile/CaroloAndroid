@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_img2"
+    android:clickable="true"
+    tools:context=".modules.notification.NotificationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_transparent"
+            android:fontFamily="sans-serif"
+            android:paddingVertical="5dp"
+            android:text="Mis Favoritos"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_25" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ln_nodata"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_end_color"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:paddingTop="@dimen/default_vertical_margin"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_qr"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/img_favoritos"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Aún no tienes favoritos"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_30" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_end_color"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:paddingTop="@dimen/default_vertical_margin">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_my_services"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/restaurantes_holder" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

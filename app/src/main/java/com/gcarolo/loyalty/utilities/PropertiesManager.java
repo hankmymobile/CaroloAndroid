@@ -12,7 +12,9 @@ public class PropertiesManager {
 
     public enum StoredProperty {
 
-        UserSession("user_session", false);
+        UserSession("user_session", false),
+        User("user_name", false),
+        Password("user_password", false);
 
         private String propertyKey;
         private boolean secure;
@@ -31,7 +33,7 @@ public class PropertiesManager {
         }
     }
 
-    private static final String PREFERENCES_FILE_KEY = "mx.com.myMassages.PREFERENCES_FILE_KEY";
+    private static final String PREFERENCES_FILE_KEY = "PREFERENCES_FILE_KEY";
 
     public static final String ALIAS = "Carolo";
 
@@ -44,7 +46,7 @@ public class PropertiesManager {
     private KeyStore keyStore;
 
 
-    PropertiesManager() {
+    public PropertiesManager() {
         this.sharedPreferences = AppContext
                 .getInstance()
                 .getContext()
@@ -104,9 +106,9 @@ public class PropertiesManager {
 
     public String readProperty(@NonNull StoredProperty property) {
         if (!this.sharedPreferences.contains(property.getPropertyKey())) {
-            return null;
+            return "";
         } else {
-            String propertyValue = this.sharedPreferences.getString(property.getPropertyKey(), null);
+            String propertyValue = this.sharedPreferences.getString(property.getPropertyKey(), "");
             if (property.isSecure() && !TextUtils.isEmpty(propertyValue))
                 propertyValue = Utilities.getInstance().decrypt(propertyValue);
 

@@ -1,29 +1,32 @@
-package com.gcarolo.loyalty.modules.perfil;
+package com.gcarolo.loyalty.modules.webview;
+
+import static com.gcarolo.loyalty.R.string.urlDefaultWebView;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.gcarolo.loyalty.R;
 import com.gcarolo.loyalty.common.BaseFragment;
-import com.gcarolo.loyalty.modules.createAccount.CreateAccountPresenter;
-import com.gcarolo.loyalty.modules.createAccount.CreateAccountView;
-import com.google.android.material.textfield.TextInputEditText;
 
 
-public class PerfilFragment extends BaseFragment {
+public class WebViewFragment extends BaseFragment {
 
     private View rootView;
 
-    public PerfilFragment() {
+    public WebViewFragment() {
 
     }
 
 
-    public static PerfilFragment newInstance() {
-        PerfilFragment fragment = new PerfilFragment();
+    public static WebViewFragment newInstance(String url) {
+        WebViewFragment fragment = new WebViewFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(URL, url);
+        fragment.setArguments(bundle);
         return fragment;
     }
 
@@ -37,7 +40,7 @@ public class PerfilFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         if (null == this.rootView) {
-            this.rootView = inflater.inflate(R.layout.fragment_perfil, container, false);
+            this.rootView = inflater.inflate(R.layout.fragment_webview, container, false);
             configViews();
         }
         return rootView;
@@ -50,6 +53,19 @@ public class PerfilFragment extends BaseFragment {
 
     private void configViews() {
 
-        
+        // Find the WebView by its unique ID
+        WebView webView = rootView.findViewById(R.id.webview);
+
+        // loading https://www.geeksforgeeks.org url in the WebView.
+        String url = getArguments().getString(URL,  getString(urlDefaultWebView));
+        webView.loadUrl(url);
+
+        // this will enable the javascript.
+        webView.getSettings().setJavaScriptEnabled(true);
+
+        // WebViewClient allows you to handle
+        // onPageFinished and override Url loading.
+        webView.setWebViewClient(new WebViewClient());
+
     }
 }

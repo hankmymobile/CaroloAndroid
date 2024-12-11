@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/img_campana"
+        android:title="Notificaciones" />
+
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/img_star"
+        android:title="Mis Favoritos" />
+
+    <item
+        android:id="@+id/balance"
+        android:icon="@drawable/img_profile"
+        android:title="Saldo" />
+
+    <item
+        android:id="@+id/restaurants"
+        android:icon="@drawable/img_restaurannte"
+        android:title="Restaurantes" />
+</menu>

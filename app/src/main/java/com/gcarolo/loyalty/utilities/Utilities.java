@@ -27,6 +27,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -217,5 +218,10 @@ public class Utilities {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public static String moneyFormat(Double s) {
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        return format.format(s);
     }
 }

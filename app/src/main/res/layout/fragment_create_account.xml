@@ -4,164 +4,380 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/bg_img3"
+    android:clickable="true"
     tools:context=".modules.createAccount.CreateAccountFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="@dimen/default_horizontal_margin"
-            android:paddingVertical="@dimen/default_vertical_margin">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-                android:layout_marginVertical="@dimen/wide_vertical_margin"
-                android:src="@mipmap/ic_launcher" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_register_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:hint="@string/hint_create_name"
-                android:inputType="text" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_register_mail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:hint="@string/hint_create_mail"
-                android:inputType="text" />
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/default_horizontal_margin"
+                android:paddingVertical="@dimen/default_vertical_margin">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_code_phone"
-                    android:layout_width="0dp"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/img_edit_perfil_default"
+                    app:civ_border_color="@color/white_transparent"
+                    app:civ_border_width="2dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ly_register_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.3"
-                    android:hint="@string/hint_create_code_phone"
-                    android:inputType="text"
-                    android:text="+52" />
+                    android:layout_marginTop="16dp"
+                    android:textColorHint="@color/white"
+                    app:boxBackgroundColor="@color/white_transparent"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_phone_number"
-                    android:layout_width="0dp"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/drleft_perfil"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/white"
+                        android:hint="@string/hint_create_name"
+                        android:inputType="text|textEmailAddress"
+                        android:textColor="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ly_register_mail"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.7"
-                    android:hint="@string/hint_create_phone_number"
-                    android:inputType="text" />
+                    android:layout_marginTop="16dp"
+                    android:textColorHint="@color/white"
+                    app:boxBackgroundColor="@color/white_transparent"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator">
 
-            </LinearLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/drleft_mail"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/white"
+                        android:hint="@string/hint_create_mail"
+                        android:inputType="text|textEmailAddress"
+                        android:textColor="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_day"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.25"
-                    android:hint="@string/hint_create_day"
-                    android:inputType="text" />
+                    android:layout_marginTop="@dimen/max_vertical_margin"
+                    android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_month"
-                    android:layout_width="0dp"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ly_code_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:textColorHint="@color/white"
+                        app:boxBackgroundColor="@color/white_transparent"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/separator">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ed_code_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/drleft_cel"
+                            android:drawablePadding="10dp"
+                            android:drawableTint="@color/white"
+                            android:hint="@string/hint_create_code_phone"
+                            android:inputType="text|textEmailAddress"
+                            android:text="+52"
+                            android:textColor="@color/white" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ly_register_phone_number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/min_horizontal_margin"
+                        android:layout_weight="0.7"
+                        android:textColorHint="@color/white"
+                        app:boxBackgroundColor="@color/white_transparent"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/separator">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ed_phone_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="10dp"
+                            android:drawableTint="@color/white"
+                            android:hint="@string/hint_create_phone_number"
+                            android:inputType="text"
+                            android:textColor="@color/white" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.35"
-                    android:hint="@string/hint_create_month"
-                    android:inputType="text" />
+                    android:layout_marginTop="@dimen/max_vertical_margin"
+                    android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_year"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.40"
-                    android:hint="@string/hint_create_year"
-                    android:inputType="text" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ly_register_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:textColorHint="@color/white"
+                        app:boxBackgroundColor="@color/white_transparent"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/separator"
+                        app:startIconDrawable="@drawable/drleft_calendar"
+                        app:startIconTint="@color/white">
 
-            </LinearLayout>
+                        <AutoCompleteTextView
+                            android:id="@+id/ed_day"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/hint_create_day"
+                            android:inputType="text|textEmailAddress"
+                            android:text=""
+                            android:textColor="@color/white" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/txt_recovery_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:text="@string/hint_create_birthday"
-                android:textAlignment="textStart"
-                android:textSize="@dimen/text_size_19" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_register_sex"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:hint="@string/hint_create_sex"
-                android:inputType="text" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ly_register_month"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/min_horizontal_margin"
+                        android:layout_weight="0.35"
+                        android:textColorHint="@color/white"
+                        app:boxBackgroundColor="@color/white_transparent"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/separator"
+                        app:startIconDrawable="@drawable/drleft_calendar"
+                        app:startIconTint="@color/white">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_register_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:hint="@string/hint_create_password"
-                android:inputType="text" />
+                        <AutoCompleteTextView
+                            android:id="@+id/ed_month"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/hint_create_month"
+                            android:inputType="text|textEmailAddress"
+                            android:text=""
+                            android:textColor="@color/white" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_register_confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:hint="@string/hint_create_confirm_password"
-                android:inputType="text" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/max_vertical_margin"
-                android:orientation="horizontal">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ly_register_year"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.40"
+                        android:textColorHint="@color/white"
+                        app:boxBackgroundColor="@color/white_transparent"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp"
+                        app:boxCornerRadiusTopStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/separator"
+                        app:startIconDrawable="@drawable/drleft_calendar"
+                        app:startIconTint="@color/white">
 
-                <RadioButton
-                    android:id="@+id/btn_check_terms_conditions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:hint=""
-                    android:text="" />
+                        <AutoCompleteTextView
+                            android:id="@+id/ed_year"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/hint_create_year"
+                            android:inputType="text|textEmailAddress"
+                            android:textColor="@color/white" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/txt_recovery_description"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/hint_create_birthday" />
+                    android:layout_marginTop="@dimen/max_vertical_margin"
+                    android:text="@string/hint_create_birthday"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_16" />
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ly_register_sex"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColorHint="@color/white"
+                    app:boxBackgroundColor="@color/white_transparent"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator"
+                    app:startIconDrawable="@drawable/drleft_sex"
+                    app:startIconTint="@color/white">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ed_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/hint_create_sex"
+                        android:inputType="text|textEmailAddress"
+                        android:text="Mujer"
+                        android:textColor="@color/white" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ly_register_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColorHint="@color/white"
+                    app:boxBackgroundColor="@color/white_transparent"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/drleft_password"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/white"
+                        android:hint="@string/hint_create_password"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ly_register_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColorHint="@color/white"
+                    app:boxBackgroundColor="@color/white_transparent"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/drleft_password"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/white"
+                        android:hint="@string/hint_create_confirm_password"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/max_vertical_margin"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/btn_check_terms_conditions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_custom"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:hint=""
+                        android:text="" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/hint_create_terms_conditions"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_16" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_continue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_button_default"
+                    android:layout_marginVertical="@dimen/wide_vertical_margin"
+                    android:backgroundTint="@color/boton_color"
+                    android:text="@string/btn_create_account"
+                    app:cornerRadius="6dp" />
             </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_continue"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_button_default"
-                android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-                android:layout_marginVertical="@dimen/wide_vertical_margin"
-                android:text="@string/btn_create_account"
-                app:cornerRadius="6dp" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
 </FrameLayout>

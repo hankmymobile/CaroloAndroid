@@ -4,6 +4,6 @@
     <item
         android:width="25dp"
         android:height="25dp"
-        android:drawable="@drawable/img_perfil_edt" />
+        android:drawable="@drawable/img_calendar_edt" />
 
 </layer-list>

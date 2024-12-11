@@ -9,7 +9,7 @@ public class ApiDto {
     @Expose
     private int status;
 
-    @SerializedName("mensaje")
+    @SerializedName("message")
     @Expose
     private String mensaje;
 

@@ -4,138 +4,212 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/bg_img2"
+    android:clickable="true"
     tools:context=".modules.login.LoginFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="@dimen/default_horizontal_margin"
-            android:paddingVertical="@dimen/default_vertical_margin">
+            android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:elevation="@dimen/card_default_elevation"
-                app:cardCornerRadius="@dimen/card_default_radius"
-                app:cardElevation="@dimen/card_default_elevation"
-                app:cardUseCompatPadding="true">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/medium2_wide_vertical_margin"
+                android:paddingVertical="@dimen/default_vertical_margin">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <ImageView
+                    android:id="@+id/img_edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/max_horizontal_margin"
+                    android:layout_marginTop="@dimen/wide_vertical_margin"
+                    android:adjustViewBounds="true"
+                    android:background="@color/white_transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_edit_perfil_default" />
+
+                <TextView
+                    android:id="@+id/tv_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/min_vertical_margin"
+                    android:text="@string/message_start"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_25" />
+
+                <ImageButton
+                    android:id="@+id/btn_recent_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="@dimen/min_vertical_margin"
+                    android:layout_weight="0.33"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_recents" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/medium_wide_vertical_margin"
+                    android:layout_marginBottom="@dimen/wide_vertical_margin">
 
-                    <TextView
-                        android:id="@+id/title_login"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="@dimen/max_vertical_margin"
-                        android:text="@string/login"
-                        android:textAlignment="center"
-                        android:textSize="@dimen/text_size_19"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
 
-                    <View
-                        android:id="@+id/separator"
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_marginHorizontal="@dimen/extra_wide_horizontal_margin"
-                        android:layout_marginVertical="@dimen/max_vertical_margin"
-                        android:background="@color/separator"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/title_login" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/et_email"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-                        android:layout_marginVertical="@dimen/wide_vertical_margin"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/separator">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/ed_login_account_email"
+                        <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/email"
-                            android:inputType="text|textEmailAddress" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/img_recuadro_saldo" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/et_password"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-                        android:layout_marginVertical="@dimen/wide_vertical_margin"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/et_email">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/ed_login_account_password"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/password"
-                            android:inputType="text|textPassword" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/title_carolo_balance"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="@dimen/max_vertical_margin"
+                                    android:text="@string/login"
+                                    android:textAlignment="center"
+                                    android:textSize="@dimen/text_size_19"
+                                    android:visibility="invisible"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/title2_carolo_balance"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="@dimen/max_vertical_margin"
+                                    android:paddingEnd="@dimen/default_horizontal_margin"
+                                    android:text="@string/message_balance"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_19"
+                                    android:visibility="invisible"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/title_carolo_balance" />
+
+                                <View
+                                    android:id="@+id/separator"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_marginVertical="@dimen/min_vertical_margin"
+                                    android:background="@color/white"
+                                    android:visibility="invisible"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/title2_carolo_balance" />
+
+                                <TextView
+                                    android:id="@+id/tv_balance"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/min_vertical_margin"
+                                    android:gravity="center"
+                                    android:text="@string/default_ammount"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_30"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/separator" />
 
 
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/tv_recover_password"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-                        android:layout_marginTop="@dimen/wide_vertical_margin"
-                        android:layout_marginBottom="@dimen/wide_vertical_margin"
-                        android:text="@string/recover_password"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingHorizontal="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/min_vertical_margin"
+                    android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/btn_login"
+                        android:id="@+id/btn_accumulate"
                         android:layout_width="0dp"
+                        android:layout_weight="0.49"
                         android:layout_height="@dimen/height_button_default"
-                        android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-                        android:layout_marginVertical="@dimen/wide_vertical_margin"
-                        android:text="@string/btn_login"
-                        app:cornerRadius="6dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_recover_password" />
+                        android:backgroundTint="@color/cafe_boton2"
+                        android:text="Acumular"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:cornerRadius="8dp" />
+
+                    <ImageButton
+                        android:visibility="invisible"
+                        android:id="@+id/btn_invoice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.02"
+                        android:adjustViewBounds="true"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_facturar" />
 
                     <Button
-                        android:id="@+id/btn_create_account"
+                        android:id="@+id/btn_pay"
                         android:layout_width="0dp"
+                        android:layout_weight="0.49"
                         android:layout_height="@dimen/height_button_default"
-                        android:layout_marginHorizontal="@dimen/max_horizontal_margin"
-                        android:layout_marginTop="@dimen/default_vertical_margin"
-                        android:layout_marginBottom="@dimen/wide_vertical_margin"
-                        android:background="@color/transparent"
-                        android:text="@string/create_account"
-                        android:textColor="@color/primary_color"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+                        android:backgroundTint="@color/cafe_boton2"
+                        android:text="Pagar"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:cornerRadius="8dp" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
+                </LinearLayout>
 
 
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="@dimen/height_button_default"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_margin="@dimen/min_horizontal_margin"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_engrane" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/default_vertical_margin"
+            android:text="@string/txt_more_do"
+            android:textColor="@color/white" />
+    </RelativeLayout>
 </FrameLayout>

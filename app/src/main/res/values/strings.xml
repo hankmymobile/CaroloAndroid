@@ -6,18 +6,53 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="urlDefaultWebView">https://www.grupocarolo.com.mx</string>
+    <string name="urlPrivacy">https://www.grupocarolo.com.mx/avisodeprivacidad</string>
+    <string name="urlTerms">https://www.grupocarolo.com.mx/terminosycondiciones</string>
+
     <string name="login">GRUPO CAROLO</string>
     <string name="btn_login">Entrar</string>
     <string name="email">E-mail o número de celular</string>
     <string name="password">Contraseña</string>
+    <string name="confirm_password">Confirmar Contraseña</string>
+    <string name="confirm_password_title">Cambiar contraseña</string>
+    <string name="confirm_password_alert_title">Se ha cambiado su contraseña correctamente</string>
     <string name="user_type">Tipo de usuario</string>
     <string name="recover_password">¿Olvidaste tu  contraseña?</string>
-    <string name="recover_description_password">Ingresa tu número celular y te ennviaremos instrucciones sobre como restablecerla</string>
+    <string name="recover_description_password">Ingresa tu número celular y te enviaremos instrucciones sobre como restablecerla</string>
+    <string name="change_description_password">*Ingresa tu nueva contraseña para iniciar sesión</string>
     <string name="recovery_celular">Número de celular</string>
     <string name="recover_send">Enviar</string>
     <string name="not_account">¿No tienes cuenta?</string>
     <string name="create_account">Crear una cuenta</string>
     <string name="btn_create_account">Registrar</string>
+    <string name="btn_update">Actualizar</string>
+
+    <string name="next">Siguiente</string>
+    <string name="message_welcome">Bienvenido a</string>
+    <string name="message_start">¡Hola X!</string>
+
+    <string name="recent_activitys">Actividad Reciente</string>
+    <string name="message_balance">SALDO</string>
+    <string name="default_ammount">$0.00</string>
+    <string name="txt_invoice">Facturar</string>
+    <string name="txt_accumulate">Acumular</string>
+    <string name="txt_pay">Pagar</string>
+    <string name="txt_more_do">¿Qué más puedo hacer?</string>
+
+    <string name="message_title_configuration_account">Cuenta</string>
+    <string name="message_configuration_change_password">Cambiar contraseña</string>
+    <string name="message_configuration_delete_account">Eliminar cuenta</string>
+    <string name="message_configuration_delete_account_question">¿Deseas elimiar tu cuenta?</string>
+    <string name="message_title_configuration_others">Otros</string>
+    <string name="message_configuration_delivery">Configuración delivery</string>
+    <string name="message_configuration_privacy">Políticas de privacidad</string>
+    <string name="message_configuration_terms">Términos y condiciones</string>
+    <string name="message_configuration_close_session">Salir de la cuenta</string>
+
+    <string name="message_title_address">Direcciones</string>
+    <string name="message_title_address_without">Aún no tienes direcciones guardadas.</string>
+    <string name="message_title_payments">Métodos de Pago</string>
 
     <string name="alert_positive_text_default">Aceptar</string>
     <string name="alert_negative_text_default">Cancelar</string>
@@ -43,6 +78,27 @@
     <string name="hint_create_confirm_password">Confirmar contraseña</string>
     <string name="hint_create_terms_conditions">He leído y acepto los Términos y Condiciones, así como el Aviso de Privacidad</string>
 
+    <string name="add_addrress_title">Agregar dirección</string>
+    <string name="add_addrress_street">Calle</string>
+    <string name="add_addrress_number">Número</string>
+    <string name="add_addrress_int">Interior</string>
+    <string name="add_addrress_cp">Código Postal</string>
+    <string name="add_addrress_suburb">Colonia</string>
+    <string name="add_addrress_reference">Referencia</string>
+    <string name="add_addrress_next">Siguiente</string>
+
+    <string name="add_rfc">Registrar RFC</string>
+
+    <string name="recent_activities_title">Mi cuenta</string>
+    <string name="recent_activities_subtitle">Actividad reciente</string>
+    <string name="recent_activities_no_activities">Aún no tienes actividad para mostrar</string>
+
+    <string name="configuration_title">Configuración</string>
+    <string name="perfil_title">Mi Perfil</string>
+    <string name="rfc_title">Selecciona RFC</string>
+    <string name="no_rfc">Aún no tienes un RFC registrado</string>
+    <string name="acumulate_title">Acumular</string>
+
     <string name="my_service_date">Fecha: %1s\n\n</string>
     <string name="my_service_couple">Tipo: %1s\n\n</string>
     <string name="my_service_gender">Género de teraèuta: %1s</string>
@@ -57,5 +113,13 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Gender_Names">
+        <item>Otro</item>
+        <item>Mujer</item>
+        <item>Hombre</item>
+    </string-array>
 
 </resources>

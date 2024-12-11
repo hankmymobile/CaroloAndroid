@@ -4,69 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/font_gray"
-    tools:context=".modules.recoveryPassword.RecoveryPasswordFragment">
+    android:background="@drawable/bg_img2"
+    android:clickable="true"
+    tools:context=".modules.configuration.ConfigurationFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingHorizontal="@dimen/default_horizontal_margin"
-        android:paddingVertical="@dimen/default_vertical_margin">
+        android:background="@color/transparent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_next"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/height_button_default"
-            android:layout_alignParentRight="true"
-            android:backgroundTint="@color/black_overlay_2"
-            android:text="@string/next"
+        <TextView
+            android:id="@+id/title_recovery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_transparent"
+            android:fontFamily="sans-serif"
+            android:paddingVertical="5dp"
+            android:text="@string/configuration_title"
+            android:textAlignment="center"
             android:textColor="@color/white"
-            app:cornerRadius="6dp" />
+            android:textSize="@dimen/text_size_25" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/default_horizontal_margin"
+            android:paddingVertical="@dimen/default_vertical_margin">
 
             <TextView
-                android:id="@+id/title_login_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/message_start"
+                android:background="@color/white_transparent"
+                android:paddingVertical="@dimen/min_vertical_margin"
+                android:text="@string/message_title_configuration_account"
                 android:textAlignment="textStart"
-                android:textColor="@color/warning_color"
-                android:textSize="@dimen/text_size_20"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_22"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/opt_change_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                android:drawableRight="@drawable/drright_arrow_right"
+                android:drawableTint="@color/white"
+                android:text="@string/message_configuration_change_password"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_20" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
                 android:layout_marginVertical="@dimen/min_vertical_margin"
+                android:background="@color/font_gray" />
+
+            <TextView
+                android:id="@+id/opt_delete_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/message_welcome"
+                android:drawableRight="@drawable/drright_arrow_right"
+                android:drawableTint="@color/white"
+                android:text="@string/message_configuration_delete_account"
                 android:textAlignment="textStart"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="@color/danger_color"
+                android:textSize="@dimen/text_size_20" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/login"
+                android:layout_marginTop="@dimen/max_vertical_margin"
+                android:background="@color/white_transparent"
+                android:paddingVertical="@dimen/min_vertical_margin"
+
+                android:text="@string/message_title_configuration_others"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_40"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="@dimen/text_size_22"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/opt_delivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                android:text="@string/message_configuration_delivery"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_20"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="@dimen/min_vertical_margin"
+                android:background="@color/font_gray" />
+
+            <TextView
+                android:id="@+id/opt_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/drright_arrow_right"
+                android:drawableTint="@color/white"
+                android:text="@string/message_configuration_privacy"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_20" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="@dimen/min_vertical_margin"
+                android:background="@color/font_gray" />
+
+            <TextView
+                android:id="@+id/opt_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/drright_arrow_right"
+                android:drawableTint="@color/white"
+                android:text="@string/message_configuration_terms"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_20" />
+
+            <TextView
+                android:id="@+id/opt_close_session"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/max_vertical_margin"
+                android:text="@string/message_configuration_close_session"
+                android:textAlignment="textStart"
+                android:textColor="@color/letra_azul"
+                android:textSize="@dimen/text_size_20" />
 
         </LinearLayout>
-
-    </RelativeLayout>
-
+    </LinearLayout>
 </FrameLayout>
