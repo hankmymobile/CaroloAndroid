@@ -70,7 +70,7 @@
                     android:id="@+id/recycler_my_services"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:listitem="@layout/restaurantes_holder" />
+                    tools:listitem="@layout/favoritos_holder" />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

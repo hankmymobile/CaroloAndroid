@@ -33,7 +33,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
         getView().hideProgressDialog();
         switch (requestCode) {
             case USER_LOGIN:
-                getView().successLogin(((LoginDTO)dto).getData().getToken(), ((LoginDTO)dto).getData().getUserId(), ((LoginDTO)dto).getData().getFullName());
+                getView().successLogin(((LoginDTO)dto).getData().getToken(), ((LoginDTO)dto).getData().getUserId(), ((LoginDTO)dto).getData().getFullName(), ((LoginDTO)dto).getData());
                 break;
         }
     }

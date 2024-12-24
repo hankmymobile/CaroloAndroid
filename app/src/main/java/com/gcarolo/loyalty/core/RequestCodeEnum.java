@@ -6,5 +6,8 @@ public enum RequestCodeEnum {
     USER_LOGIN,
     USER_INFO,
     GET_ADDRESSES,
-    USER_BALANCE
+    USER_BALANCE,
+    GET_OTP,
+    VALIDATE_OTP,
+    CHANGE_PASSWORD
 }

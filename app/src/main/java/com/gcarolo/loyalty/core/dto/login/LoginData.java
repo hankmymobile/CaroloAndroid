@@ -3,6 +3,8 @@ package com.gcarolo.loyalty.core.dto.login;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class LoginData {
 
     @SerializedName("token")
@@ -16,6 +18,14 @@ public class LoginData {
     @SerializedName("fullName")
     @Expose
     String fullName;
+
+    @SerializedName("tiposDescuentos")
+    @Expose
+    ArrayList<TiposDescuentos> tiposDescuentos;
+
+    @SerializedName("perfiles")
+    @Expose
+    ArrayList<Perfiles> perfiles;
 
     public String getToken() {
         return token;
@@ -39,5 +49,21 @@ public class LoginData {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public ArrayList<TiposDescuentos> getTiposDescuentos() {
+        return tiposDescuentos;
+    }
+
+    public void setTiposDescuentos(ArrayList<TiposDescuentos> tiposDescuentos) {
+        this.tiposDescuentos = tiposDescuentos;
+    }
+
+    public ArrayList<Perfiles> getPerfiles() {
+        return perfiles;
+    }
+
+    public void setPerfiles(ArrayList<Perfiles> perfiles) {
+        this.perfiles = perfiles;
     }
 }

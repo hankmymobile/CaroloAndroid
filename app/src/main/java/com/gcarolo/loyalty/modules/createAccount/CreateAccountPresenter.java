@@ -21,12 +21,13 @@ public class CreateAccountPresenter extends BasePresenter<CreateAccountView> {
         super(view);
     }
 
-    public void registerUser(String name, String mail, String code, String phoneNumber, String birthday, Gender gender, String password) {
+    public void registerUser(String name, String firstName, String lastName, String mail, String code, String phoneNumber, String birthday, Gender gender, String password) {
         getView().showProgressDialog();
 
         CreateAccountParams params = new CreateAccountParams();
         params.setUsername(mail);
-        params.setNombreCompleto(name);
+        params.setNombre(name);
+        params.setApellidos(firstName + " " + lastName);
         params.setPassword(password);
         params.setAutoriza(true);
         params.setNumeroCelular(phoneNumber);

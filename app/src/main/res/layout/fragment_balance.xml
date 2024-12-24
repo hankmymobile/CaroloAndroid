@@ -43,7 +43,7 @@
                     android:layout_marginTop="@dimen/min_vertical_margin"
                     android:text="@string/message_start"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_25" />
+                    android:textSize="@dimen/text_size_22" />
 
                 <ImageButton
                     android:id="@+id/btn_recent_activity"

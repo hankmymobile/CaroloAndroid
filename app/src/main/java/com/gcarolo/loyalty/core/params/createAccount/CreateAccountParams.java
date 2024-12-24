@@ -8,7 +8,8 @@ import java.util.Map;
 public class CreateAccountParams extends ApiParams {
 
     private String username = "";
-    private String nombreCompleto = "";
+    private String nombre = "";
+    private String apellidos = "";
     private String password = "";
     private String numeroCelular = "";
     private String fechaNacimiento = "";
@@ -27,12 +28,20 @@ public class CreateAccountParams extends ApiParams {
         this.username = username;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getPassword() {
@@ -89,7 +98,8 @@ public class CreateAccountParams extends ApiParams {
         appendParameter("username", getUsername());
         appendParameter("password", Utilities.md5(getPassword()));
         appendParameter("numeroCelular", getNumeroCelular());
-        appendParameter("nombreCompleto", getNombreCompleto());
+        appendParameter("nombre", getNombre());
+        appendParameter("apellidos", getApellidos());
         appendParameter("autoriza", isAutoriza());
         appendParameter("fechaNacimiento", getFechaNacimiento());
         appendParameter("saldoInicial", getSaldoInicial());

@@ -10,6 +10,8 @@ public class ProfileDataSingleton {
 
     private String fullname;
 
+    private boolean logAsGerente = false;
+
     private double saldoActual;
 
     public static String USER = "USER";
@@ -76,5 +78,13 @@ public class ProfileDataSingleton {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
+    }
+
+    public boolean isLogAsGerente() {
+        return logAsGerente;
+    }
+
+    public void setLogAsGerente(boolean logAsGerente) {
+        this.logAsGerente = logAsGerente;
     }
 }

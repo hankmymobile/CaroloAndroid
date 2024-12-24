@@ -28,6 +28,7 @@ import com.gcarolo.loyalty.common.ProfileDataSingleton;
 import com.gcarolo.loyalty.core.params.createAccount.Gender;
 import com.gcarolo.loyalty.modules.welcomePage.WelcomePageFragment;
 import com.gcarolo.loyalty.utilities.DatePickerFragment;
+import com.gcarolo.loyalty.utilities.PropertiesManager;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.IOException;
@@ -43,15 +44,19 @@ public class CreateAccountFragment extends BaseFragment implements CreateAccount
 
     CircleImageView imgProfile;
 
-    int genderSelect = 0;
+    int genderSelect = 1;
 
     TextInputEditText edMail;
     TextInputEditText edPassword;
+    AutoCompleteTextView edBirthDay;
     AutoCompleteTextView edDay;
     AutoCompleteTextView edMonth;
     AutoCompleteTextView edYear;
 
+    private PropertiesManager propertiesManager;
+
     public CreateAccountFragment() {
+        this.propertiesManager = new PropertiesManager();
         presenter = new CreateAccountPresenter(this);
     }
 
@@ -85,9 +90,12 @@ public class CreateAccountFragment extends BaseFragment implements CreateAccount
     private void configViews() {
 
         TextInputEditText edName = rootView.findViewById(R.id.ed_name);
+        TextInputEditText edFirstName = rootView.findViewById(R.id.ed_first_name);
+        TextInputEditText edLastName = rootView.findViewById(R.id.ed_last_name);
         edMail = rootView.findViewById(R.id.ed_mail);
         TextInputEditText edCodePhone = rootView.findViewById(R.id.ed_code_phone);
         TextInputEditText edPhoneNumber = rootView.findViewById(R.id.ed_phone_number);
+        edBirthDay = rootView.findViewById(R.id.ed_birthday);
         edDay = rootView.findViewById(R.id.ed_day);
         edMonth = rootView.findViewById(R.id.ed_month);
         edYear = rootView.findViewById(R.id.ed_year);
@@ -96,6 +104,7 @@ public class CreateAccountFragment extends BaseFragment implements CreateAccount
         TextInputEditText edConfirmPassword = rootView.findViewById(R.id.ed_confirm_password);
         CheckBox checkTermsConditions = rootView.findViewById(R.id.btn_check_terms_conditions);
 
+        edBirthDay.setOnClickListener(this);
         edDay.setOnClickListener(this);
         edMonth.setOnClickListener(this);
         edYear.setOnClickListener(this);
@@ -125,7 +134,8 @@ public class CreateAccountFragment extends BaseFragment implements CreateAccount
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!edName.getEditableText().toString().isEmpty() && !edMail.getEditableText().toString().isEmpty()
+                if (!edName.getEditableText().toString().isEmpty() && !edFirstName.getEditableText().toString().isEmpty()
+                && !edMail.getEditableText().toString().isEmpty()
                 && !edCodePhone.getEditableText().toString().isEmpty() && !edPhoneNumber.getEditableText().toString().isEmpty()
                 && !edDay.getEditableText().toString().isEmpty() && !edMonth.getEditableText().toString().isEmpty()
                 && !edYear.getEditableText().toString().isEmpty() && !edGender.getEditableText().toString().isEmpty()
@@ -141,7 +151,7 @@ public class CreateAccountFragment extends BaseFragment implements CreateAccount
                         } else if (genderSelect == 2) {
                             gender.setValorSexousuario("HOMBRE");
                         }
-                        presenter.registerUser(edName.getEditableText().toString(), edMail.getEditableText().toString(), edCodePhone.getEditableText().toString(),
+                        presenter.registerUser(edName.getEditableText().toString(), edFirstName.getEditableText().toString(), edLastName.getEditableText().toString(), edMail.getEditableText().toString(), edCodePhone.getEditableText().toString(),
                                 edPhoneNumber.getEditableText().toString(), edYear.getEditableText().toString()+"-"+edMonth.getEditableText().toString()+"-"+edDay.getEditableText().toString(),
                                 gender, edPassword.getEditableText().toString());
                     } else {
@@ -185,6 +195,7 @@ public class CreateAccountFragment extends BaseFragment implements CreateAccount
                     edMonth.setText(""+month);
                 }
                 edYear.setText(""+year);
+                edBirthDay.setText(edDay.getText() + "-" + edMonth.getText() + "-" + edYear.getText());
             }
         });
 
@@ -237,6 +248,9 @@ public class CreateAccountFragment extends BaseFragment implements CreateAccount
         ProfileDataSingleton.getInstance().setUserId(id);
         ProfileDataSingleton.getInstance().setUsername(edMail.getText().toString());
         ProfileDataSingleton.getInstance().setFullname(fullname);
+
+        propertiesManager.writeProperty(PropertiesManager.StoredProperty.User, edMail.getEditableText().toString());
+        propertiesManager.writeProperty(PropertiesManager.StoredProperty.Password, edPassword.getEditableText().toString());
 
         WelcomePageFragment fragment = WelcomePageFragment.newInstance();
         displayFragment(fragment, null);

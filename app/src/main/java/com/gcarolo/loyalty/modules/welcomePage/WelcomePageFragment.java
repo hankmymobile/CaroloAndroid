@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.gcarolo.loyalty.LoginActivity;
 import com.gcarolo.loyalty.MainActivity;
+import com.gcarolo.loyalty.MainActivity2;
 import com.gcarolo.loyalty.R;
 import com.gcarolo.loyalty.SplashScreenActivity;
 import com.gcarolo.loyalty.WelcomeActivity;
@@ -50,10 +51,17 @@ public class WelcomePageFragment extends BaseFragment {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), MainActivity.class);
-                getActivity().startActivity(i);
-                getActivity().overridePendingTransition(R.anim.fade_in, R.anim.hold);
-                getActivity().finish();
+                if (ProfileDataSingleton.getInstance().isLogAsGerente()) {
+                    Intent i = new Intent(getActivity(), MainActivity2.class);
+                    getActivity().startActivity(i);
+                    getActivity().overridePendingTransition(R.anim.fade_in, R.anim.hold);
+                    getActivity().finish();
+                }else{
+                    Intent i = new Intent(getActivity(), MainActivity.class);
+                    getActivity().startActivity(i);
+                    getActivity().overridePendingTransition(R.anim.fade_in, R.anim.hold);
+                    getActivity().finish();
+                }
             }
         });
 

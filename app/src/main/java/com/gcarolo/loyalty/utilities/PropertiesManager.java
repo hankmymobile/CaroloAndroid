@@ -14,7 +14,8 @@ public class PropertiesManager {
 
         UserSession("user_session", false),
         User("user_name", false),
-        Password("user_password", false);
+        Password("user_password", false),
+        Favorites("user_favorites", false);
 
         private String propertyKey;
         private boolean secure;

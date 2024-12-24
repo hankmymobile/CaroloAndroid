@@ -1,18 +1,23 @@
 package com.gcarolo.loyalty.modules.configuration;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.gcarolo.loyalty.LoginActivity;
 import com.gcarolo.loyalty.MainActivity;
 import com.gcarolo.loyalty.R;
+import com.gcarolo.loyalty.WelcomeActivity;
 import com.gcarolo.loyalty.common.BaseFragment;
 import com.gcarolo.loyalty.common.ProfileDataSingleton;
 import com.gcarolo.loyalty.common.alert.DefaultDialogAlert;
@@ -21,6 +26,8 @@ import com.gcarolo.loyalty.modules.perfil.PerfilFragment;
 import com.gcarolo.loyalty.modules.recoveryPassword.RecoveryPasswordFragment;
 import com.gcarolo.loyalty.modules.webview.WebViewFragment;
 import com.gcarolo.loyalty.utilities.PropertiesManager;
+
+import org.w3c.dom.Text;
 
 public class ConfigurationFragment extends BaseFragment {
 
@@ -69,15 +76,40 @@ public class ConfigurationFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
 
-                ProfileDataSingleton.getInstance().clearData();
+                ViewGroup viewGroup = rootView.findViewById(android.R.id.content);
+                View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.my_dialog_custom, viewGroup, false);
+                Button btnSi = dialogView.findViewById(R.id.btn_si);
+                Button btnNo = dialogView.findViewById(R.id.btn_no);
+                TextView lblTitle = dialogView.findViewById(R.id.lbl_title);
+                lblTitle.setText("¿Seguro deseas cerrar tu sesión?");
 
-                propertiesManager.removeProperty(PropertiesManager.StoredProperty.User);
-                propertiesManager.removeProperty(PropertiesManager.StoredProperty.Password);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setView(dialogView);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                alertDialog.show();
+                btnSi.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                        ProfileDataSingleton.getInstance().clearData();
 
-                Intent i = new Intent(getActivity(), LoginActivity.class);
-                getActivity().startActivity(i);
-                getActivity().overridePendingTransition(R.anim.fade_in, R.anim.hold);
-                getActivity().finish();
+                        propertiesManager.removeProperty(PropertiesManager.StoredProperty.User);
+                        propertiesManager.removeProperty(PropertiesManager.StoredProperty.Password);
+
+                        Intent i = new Intent(getActivity(), LoginActivity.class);
+                        getActivity().startActivity(i);
+                        getActivity().overridePendingTransition(R.anim.fade_in, R.anim.hold);
+                        getActivity().finish();
+                    }
+                });
+
+                btnNo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                    }
+                });
             }
         });
 
@@ -121,18 +153,32 @@ public class ConfigurationFragment extends BaseFragment {
         btnDeleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DefaultDialogAlert defaultDialogAlert = new DefaultDialogAlert(getString(R.string.message_configuration_delete_account), getString(R.string.message_configuration_delete_account_question), getString(R.string.alert_positive_text_default), getString(R.string.alert_negative_text_default), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                    }
-                }, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                ViewGroup viewGroup = rootView.findViewById(android.R.id.content);
+                View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.my_dialog_custom, viewGroup, false);
+                Button btnSi = dialogView.findViewById(R.id.btn_si);
+                Button btnNo = dialogView.findViewById(R.id.btn_no);
+                TextView lblTitle = dialogView.findViewById(R.id.lbl_title);
+                lblTitle.setText("¿Deseas eliminar tu cuenta?");
 
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setView(dialogView);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                alertDialog.show();
+                btnSi.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
                     }
                 });
-                defaultDialogAlert.show(getActivity().getSupportFragmentManager(), "DefaultDialogAlert");
+
+                btnNo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                    }
+                });
             }
         });
 

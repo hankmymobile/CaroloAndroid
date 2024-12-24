@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_img2"
+    android:clickable="true"
+    tools:context=".modules.login.LoginFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/medium2_wide_vertical_margin"
+                android:paddingVertical="@dimen/default_vertical_margin">
+
+                <TextView
+                    android:id="@+id/tv_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/min_vertical_margin"
+                    android:text="@string/message_start"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_25" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/min_vertical_margin"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_redention"
+                android:layout_width="180dp"
+                android:layout_height="68dp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/cafe_boton2"
+                android:text="Redenciones"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+
+            <Button
+                android:id="@+id/btn_accumulate"
+                android:layout_width="180dp"
+                android:layout_height="68dp"
+                android:backgroundTint="@color/cafe_boton2"
+                android:text="Acumulaciones"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_exit"
+            android:layout_width="@dimen/height_button_default"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_marginStart="@dimen/min_horizontal_margin"
+            android:layout_marginTop="@dimen/min_horizontal_margin"
+            android:layout_marginEnd="@dimen/min_horizontal_margin"
+            android:layout_marginBottom="@dimen/min_horizontal_margin"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    </RelativeLayout>
+</FrameLayout>
